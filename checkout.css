@@ -1,0 +1,340 @@
+/* checkout.css */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4%;
+  margin-right: 15%;
+  width: 100%;
+}
+
+#checkout-text {
+  flex: 1 1 100%;  
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* LEFT SIDE: form */
+.checkout-form {
+  display: block;
+  width: 46%;
+  margin-left: 17%;
+}
+
+.checkout-sticky {
+  position: sticky;
+  top: 50px;   
+}
+
+#checkout-heading { 
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 0px;
+} 
+
+.shipping-label input { 
+  opacity: 0; 
+}
+
+.shipping-label {
+  display: inline-block;
+  width: 45%;
+  margin-right: 12px;
+}
+
+.shipping-option {   
+  display: flex;
+  border: 2px solid rgb(182, 182, 182);
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  font-size: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.shipping-option:hover {
+  transform: scale(1.03);
+}
+
+input:checked + .shipping-option {
+  border: 2px solid black;
+} 
+
+.shipping-option .material-symbols-outlined { 
+  font-size: 25px;
+  padding-right: 5px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap; 
+  width: 100%;
+}
+
+.input-row {
+  display: flex;
+  width: 99%;
+  margin-bottom: 20px;
+}
+
+.input-wrapper { 
+  position: relative;
+}
+
+.input-wrapper.half { 
+  width: 348px; 
+}
+
+.input-wrapper.full-width {
+  width: 99%;
+  margin-bottom: 20px;
+}
+
+.input-wrapper input {
+  width: 93%;
+  padding: 18px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.input-wrapper label {
+  position: absolute;
+  left: 15px;
+  top: 27%;
+  font-size: large;
+  pointer-events: none;
+  transition: top 0.2s linear, font-size 0.2s linear;
+}
+
+#phone {
+  width: 45%;
+}
+
+.input-wrapper input:focus + label,
+.input-wrapper input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  font-size: small;
+  font-weight: 500;
+  background: white;
+  padding: 0 5px;
+  width: fit-content;
+}
+
+/* Error handling */
+.input-wrapper .error-message {
+  color: rgb(212, 2, 2);
+  font-size: 0.85rem;
+  margin-left: 15px;
+  line-height: 0;
+  margin-top: 10px;
+  display: none; 
+}
+
+.input-wrapper input.error,
+.input-wrapper select.error {
+  border: 1.5px solid rgb(212, 2, 2) !important;
+}
+
+.input-wrapper input.error + label,
+.input-wrapper select.error + label {
+  color: rgb(212, 2, 2);
+}
+
+.input-wrapper input.error:focus,
+.input-wrapper select.error:focus {
+  border: 1.5px solid rgb(212, 2, 2) !important;
+  outline: none;
+}
+
+.input-wrapper input:not(.error) + label,
+.input-wrapper select:not(.error) + label {
+  color: black;
+}
+
+.checkout-form button {
+  padding: 15px 25px;
+  float: right;
+  background: rgb(230, 230, 230);
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-right: 8%;
+  font-size: large;
+  font-weight: 600;
+}
+
+.checkout-form button:not(:disabled):hover { 
+  background-color: #cccccc; 
+}
+
+.checkout-form button:disabled {
+  color: #b3b3b3;
+  cursor: default;
+}
+
+select {
+  font-size: large;
+  border-radius: 50px;
+  padding: 12px 25px;
+  background-color: #dfdfdf;
+  border: none;
+  cursor: pointer;
+}
+
+select option {
+  background-color: white;
+}
+
+/* RIGHT SIDE */
+.cart-summary {
+  margin-right: 11%;
+  flex: 1;
+  align-self: flex-start;
+  margin-left: auto;
+  width: 500px;
+}
+
+.summary-content {
+  margin-right: 20%;
+  flex: 1;
+  align-self: flex-start;
+  margin-left: auto;
+}
+
+.cart-item {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0 12px;
+}
+
+.cart-item img {
+  width: 120px;
+  height: 120px;
+  padding-right: 10px;
+  box-shadow: 0 0 1px grey;
+}
+
+.shoe-info {
+  font-size: 17px;
+  line-height: 1.5;
+}
+.cart-item p:nth-child(3),
+.cart-item p:last-child { color: #666666;}
+
+.divider {margin: 0 8px;}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.cart-header h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.cart-header button {
+  font-size: 18px;
+  text-decoration: underline;
+  color: black;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-header button:hover {
+  color: #666666;
+}
+
+#subtotal, #shipping, #total, .summary-row span { 
+  font-size: 17px;
+  font-weight: 400;
+}
+
+#total, .summary-row.total span {
+  font-size: 17.5px;
+  font-weight: 600;
+  margin: 15px 0 15px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  margin: 4px 0 4px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .container { 
+    flex-direction: column; 
+    margin-right: 0;
+  }
+  #checkout-text{margin-bottom: 25px;}
+  
+  .checkout-form {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+  
+  .cart-summary {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 2.5%;
+  }
+  
+  .shipping-label {
+    width: 100%;
+    margin-right: 0;
+  }
+  #pickup-btn{margin-bottom: 20px;}
+  #ship-btn{margin-bottom: -10px;}
+  
+  .input-row {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 100%;
+  }
+  
+  .input-wrapper.half {
+    width: 100%;
+  }
+  
+  .input-wrapper.full-width {
+    width: 100%;
+  }
+  
+  .input-wrapper input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #phone {
+    width: 100%;
+  }
+  
+  .checkout-form button {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+    float: none;
+  }
+  
+  .summary-content {
+    margin: 0 auto;
+    width: 100%;
+  }
+}

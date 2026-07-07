@@ -1,0 +1,463 @@
+/* Navigation buttons */
+.nav-btn {
+    position: absolute;
+    top: 95%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(235, 235, 235, 0.9);
+}
+
+.prev-btn {
+    right: 150px;
+}
+
+.next-btn {
+    right: 100px;
+}
+
+.nav-btn span {
+    font-size: 32px;
+    color: #000;
+}
+
+.top-poster-layout{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.top-poster{
+    position: relative;
+    display: flex; 
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Changed from animation to transition */
+}
+.poster-slide {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    background: none;
+    position: relative;
+    flex: 0 0 100%; 
+}
+
+.top-poster .top-img{
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    background: none;
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 32 / 15; 
+}
+
+.poster-slide:first-child .top-img {
+    background-image: url('posters/imgonline-com-ua-resize-mm4vRwdLMk.png') !important;
+}
+.poster-slide:nth-child(2) .top-img {
+    background-image: url('posters/mercurial poster.jpg');
+}
+.poster-slide:nth-child(3) .top-img {
+    background-image: url('posters/nike-joyride poster.avif');
+}
+.poster-slide:nth-child(4) .top-img {
+    background-image: url('posters/jordan blur.jpg');
+}
+.poster-slide:nth-child(5) .top-img {
+    background-image: url('posters/imgonline-com-ua-resize-mm4vRwdLMk.png');
+}
+.poster-slide:last-child .top-img {
+    background-image: url('posters/mercurial poster.jpg');
+}
+.top-poster-text{
+    display: block;
+    left: 1.3%;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    color: white;
+    font-size: 6rem;
+    letter-spacing: -2px;
+    font-family: "Passion One", sans-serif;
+    font-weight: 500;
+    bottom: 23%;
+    filter: drop-shadow(0 0 1px black);
+}
+.light-text{
+    display: block;
+    text-align: center;
+    width: 100%;
+    left: 0.5%;
+    color: white;
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: 550;
+    bottom: 21%;
+}
+.poster-slide:nth-of-type(2) .light-text, .poster-slide:nth-of-type(6) .light-text{ 
+    filter: drop-shadow(0 0 1.5px red);
+}
+.poster-slide:nth-of-type(3) .light-text{
+    filter: drop-shadow(0 0 1.5px orangered);
+}
+.poster-slide:nth-of-type(4) .light-text{
+    filter: drop-shadow(0 0 1.5px rgb(1, 106, 226));
+}
+.poster-slide:nth-of-type(1) .light-text, .poster-slide:nth-of-type(5) .light-text{
+    filter: drop-shadow(0 0 1.5px rgb(66, 1, 187));
+}
+
+.top-shop{
+    display: flex;
+    justify-self: center;
+    bottom: 12%;
+    font-size: large;
+    text-decoration: none;
+    position: absolute;
+    border-radius: 50px;
+    background-color: white;
+    color: black;
+    padding: 8px 20px;
+    font-weight: 500;
+}
+
+.top-shop:hover{
+    cursor: pointer;
+    background-color: #616161;
+}
+
+.pp-box{
+    position: absolute;
+    right: 2%;
+    bottom: 1%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pp{
+    position: absolute;
+    opacity: 0;
+    zoom: 2;
+    bottom: 2.5%;
+    right: 2.7%;
+    z-index: 11;
+    cursor: pointer;
+}  
+#pause, #play{
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+#pause span, #play span{
+    font-variation-settings:
+   'FILL' 1,
+   'wght' 200;
+    font-size:30px;
+}
+#play span{ 
+    font-variation-settings: 
+    'FILL' 1,
+    'wght' 300; 
+}
+
+#play { display: none; }
+#pp:checked~.pp-box #pause { display: none; }
+#pp:checked~.pp-box #play { display: inline-block; }
+
+.loading{
+    position: absolute;
+    transform: rotate(-90deg);   
+}
+circle{
+    fill: none;
+    stroke: black;
+    stroke-width: 3;
+    stroke-dashoffset: 113.097; 
+}
+svg circle:nth-child(2){
+    fill:none;
+    stroke: #ffffff;
+    stroke-dasharray: 113.097; 
+    stroke-dashoffset: 113.097; 
+    visibility: visible;
+}
+.dot-box{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 2%;
+    width: 100%;
+}
+.dot{
+    font-size: 7px;
+    padding: 8px;
+    filter: drop-shadow(0 0 0.5px black);
+} 
+
+.dot-box .dot.active-dot {
+  color: white;
+}
+
+.layout{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    width: 50%;
+}
+
+.imgs{
+    display: block;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+.container-text{
+    text-align: center;
+    display: flex;
+    position: absolute;
+    letter-spacing: -1.5px;
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    bottom: 8%;
+}
+.container .shop{
+    text-decoration: none;
+    position: absolute;
+    border-radius: 50px;
+    border: 0cap;
+    background-color: white;
+    color: black;
+    padding: 8px 20px;
+    font-weight: 500;
+    bottom: 3%;
+    font-size: large; 
+}
+
+.shop:hover{
+    background-color: #616161;
+}
+#text{
+    width: 100%;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    padding: 50px 55px;
+}
+.sportslayout{
+    display: flex; 
+    column-gap: 20px;
+    justify-content: space-around;
+    overflow-x: auto;
+    height: 100%;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: black transparent;
+    margin: 0px 60px 20px 60px;
+}
+#sportsbar{
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+#sportsbar .sportspics{
+    height: 80vh; 
+
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.sports-shop{
+    border-radius: 50px;
+    border: 0cap;
+    color: black;
+    padding: 8px 0;
+    font-weight: 500;
+    font-size: 23px; 
+    transition: transform 0.3s ease
+}
+#sportsbar:has(.sports-shop:hover) .sportspics{
+    transform: translateY(-5px);
+}
+.sportspics:hover+.sports-shop{
+    transform: translateY(-5px);
+}
+.sportspics:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 5px 2px rgb(0, 0, 0);
+}
+.sports-shop:hover{
+    transform: translateY(-5px);
+}
+#footer-logo{
+	width: 120px;
+    flex-shrink: 0; 
+    justify-self: center;
+    display: block;
+}
+
+#text-below-logo{
+    display: flex;
+    justify-self: center;
+    column-gap: 18px;
+    text-decoration: none; 
+	color: black;  
+}
+.login-links{
+	text-decoration: none; 
+	color: black; 
+}
+.login-links:hover{
+	color: rgb(109, 109, 109); 
+}
+
+@media (max-width:960px){
+    .nav-btn {
+        top: 50%;
+        width: 30px;
+        height: 50px;
+        opacity: 0.8;
+    }
+    
+    .nav-btn span {
+        font-size: 28px;
+    }
+    
+    .prev-btn {
+        border-radius: 0% 50% 50% 0%;
+        left: 0%;
+    }
+    
+    .next-btn {
+        border-radius: 50% 0% 0% 50%;
+        right: 0%;
+    }
+    .pp-box{ 
+        bottom: 0%; 
+        right: 0%;
+    }
+    #pause,#play{
+        width: 20px;
+        height: 20px;
+    }
+    #pause span{
+        font-size:20px;
+    }
+    #play span{
+        font-size:20px;
+    }
+    circle{
+        r: 12;
+        stroke-width: 2;
+        stroke-dashoffset: 75.39; 
+    }
+    svg circle:nth-child(2){
+        r: 12;
+        stroke-dasharray: 75.39;
+        stroke-dashoffset: 75.39; 
+    }
+    .dot-box{ bottom: 3%;}
+    .dot{ font-size: 5px; padding-right: 5px;}
+    
+    .top-poster .top-img{
+        aspect-ratio: 4 / 5; 
+    }
+    .poster-slide:nth-child(2) .top-img, .poster-slide:last-child .top-img {
+        background-image: url('posters/imgonline-com-ua-resize-xAS9D6StdY62ie6.png');
+    }
+    .poster-slide:nth-child(3) .top-img {
+        background-image: url('posters/nike-joyride.avif');
+    }
+    .poster-slide:nth-child(4) .top-img {
+        background-image: url('posters/jordan-blur-portrait.jpg');
+    }
+    .poster-slide:nth-child(5) .top-img, .poster-slide:first-child .top-img {
+        background-image: url('posters/imgonline-com-ua-resize-4x3lAq77QcPhqq.png');
+    }   
+
+    .top-poster-text{
+        font-size: 4rem;
+        bottom: 25%;
+        line-height: 0.9;
+    }
+    .poster-slide:nth-child(2) .top-poster-text, .poster-slide:last-child .top-poster-text {
+        bottom: 28%;
+    }
+    .poster-slide:nth-child(4) .top-poster-text{
+        bottom: 28%;
+    }
+    .light-text{
+        bottom: 22%;
+        padding: 0 60px;
+        font-size: 12px;
+    }
+    .top-shop{
+        font-size: 16px;
+        padding: 6px 16px;
+    } 
+
+    .container{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }   
+    .container-text{
+        bottom: 12%;
+        font-size: 1.6rem;
+    }
+    .container .shop{
+        font-size: medium;
+        padding: 6px 16px;
+    }
+    #text{
+        padding: 30px;
+        font-size: 25px;
+    }
+    
+    .sportslayout{
+        height: 100%;
+        margin: 0 0;
+    }      
+    #sportsbar{ 
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #sportsbar .sportspics{
+        height: 60vh;
+        box-sizing: border-box;  
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    .sports-shop{
+        font-size: 23px;
+        padding: 6px 0px;
+    }
+	#footer-logo{ width: 20%; }
+}

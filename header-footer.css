@@ -1,0 +1,341 @@
+/* header-footer.css */
+main{
+    margin-top: 4%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    user-select: none;
+}
+body > *:not(header):not(#dropdown):not(#overlay):not(.size-modal):not(main) {
+    position: relative;
+    z-index: 1; 
+}
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+header {
+    background-color: white;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100 !important;
+    transition: transform 0.4s ease;
+    transform: translateY(0);
+}
+header.hidden {
+    transform: translateY(-100%);
+}
+
+
+#logo {
+    margin-right: 50px;
+    width: 60px;
+    height: auto;
+}
+
+/* Larger Categories in center */
+#catagories-box {
+    display: flex;
+    gap: 35px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.catagories {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 8px 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.catagories::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #000;
+    transition: width 0.3s ease;
+}
+
+.catagories:hover::after {
+    width: 100%;
+}
+
+/* Icons on right - all same size */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.header-icons a {
+    text-decoration: none;
+    color: #000;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+/* Consistent icon sizes */
+.header-icons i, #close-button,
+.header-icons .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 40;
+    font-size: 28px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.header-icons #user-icon{
+    font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 40;
+    font-size: 30px;
+    padding: 4px;
+}
+#bag {
+    position: relative;
+}
+
+#bag-count {
+    position: absolute;
+    bottom: 11px;
+    font-size: 11px;
+    display: none;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* Heart icon specific styles */
+.heart-icon {
+    font-size: 24px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hamburger menu (hidden by default) */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+}
+
+#dropdown {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: white;
+    width: 80%;
+    height: 100%;
+    padding: 25px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    overflow-y: auto;
+}
+#dropdown.slide-in {
+    animation: slidein 0.2s ease forwards;
+}
+#dropdown.slide-out {
+    animation: slideout 0.2s ease forwards;
+}
+
+@keyframes slidein {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+@keyframes slideout {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+#menu-button{
+    display: none;
+    border: none;
+    background-color: transparent;
+}
+#close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    border: none;
+    background-color: transparent;
+}
+
+.drop-elements {
+    display: block;
+    background-size: cover;
+    padding:30px;
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 1px rgb(65, 65, 65);
+    font-weight: 400;
+    font-size: 27px;
+    transition: transform 0.2s ease;
+}
+.drop-elements:hover{
+    transform: scale(1.03);
+}
+.link-btns{
+    border-radius: 50px;
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    margin-left: 30px;
+}
+#btn2{
+    background-color: white;
+    color :black;
+    margin-left: 5px;
+    border: 1px solid rgb(199, 199, 199);
+}
+.link-btns:hover{background-color: #616161;}
+.drop-elements:nth-of-type(1){background-image: url("posters/Nikes-Mens-Shoes.jpg");}
+.drop-elements:nth-of-type(2){background-image: url("posters/imgonline-com-ua-resize-EZKKUN99dCa.png");}
+.drop-elements:nth-of-type(3){background-image: url("posters/imgonline-com-ua-resize-tWq551HM4Rir1.png");}
+.drop-elements:nth-of-type(5){background-image: url("posters/imgonline-com-ua-resize-rfNhNCBaRdQ.png");}
+.drop-elements:nth-of-type(4){background-image: url("posters/imgonline-com-ua-resize-8s0yQ6kKbEyqQ.png");}
+
+/* Footer */
+footer {
+    z-index: 1;
+    position: relative;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+#footer-text {
+    position: relative;
+    display: flex;
+    column-gap: 30px;
+    font-weight: 500;
+    color: #6e6e6e;
+    padding-bottom: 10%;
+    margin-left: 30px;
+}
+#footer-text p:hover {
+    color: black;
+    cursor: pointer;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 960px) {
+    main{
+        margin-top: 16%;
+    }
+    header {
+        padding: 13px 25px;
+    }
+    #bag-count{
+        transform: translateY(1.5px);
+        font-size: 10px;
+    }
+    /* Hide categories on mobile */
+    #catagories-box {
+        display: none;
+    }
+    
+    /* Adjust logo position */
+    #logo {
+        margin-right: auto;
+        width: 50px;
+    }
+    
+    /* Keep icons on right */
+    .header-icons {
+        margin-left: 0;
+        gap: 6px;
+    }
+
+    #menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-only {
+        display: flex;
+    }
+    
+    /* Footer adjustments */
+    footer{ margin: 5%;
+        padding: 0; 
+    margin-top: 50px;}
+    
+    #footer-text { 
+        flex-direction: column;
+        margin-left: 5px;
+        font-size: small;
+    }
+    
+    #footer-text p {
+        padding: 0 0 20px;
+    }
+    
+    /* Header icon adjustments */
+    .header-icons i, 
+    .header-icons .material-symbols-outlined {font-size: 24px;}
+    #menu-button{
+        transform: translateY(1px);
+        font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 40;
+    }
+    .header-icons #user-icon{
+        font-variation-settings:
+    'FILL' 0,
+    'wght' 250,
+    'GRAD' 0,
+    'opsz' 40;
+        font-size: 28px;
+    }
+}
+
+/* Hover effects for header icons */
+.header-icons a:hover i, #close-button:hover, #menu-button:hover,
+.header-icons a:hover .material-symbols-outlined {
+    cursor: pointer;
+    background-color: #e6e6e6;
+}
