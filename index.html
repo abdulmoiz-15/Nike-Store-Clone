@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="store.css">
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://kit.fontawesome.com/2875ca2ccc.js" crossorigin="anonymous"></script>
+    
+     <!-- Preload critical JavaScript -->
+    <link rel="preload" href="shoes-data.js" as="script">
+    <link rel="preload" href="header.js" as="script">
+    <link rel="preload" href="store.js" as="script">
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="store.css" as="style">
+    <link rel="preload" href="header-footer.css" as="style">
+    <!-- Preload all images -->
+    <link rel="preload" as="image" href="posters/imgonline-com-ua-resize-mm4vRwdLMk.png">
+    <link rel="preload" as="image" href="posters/mercurial poster.jpg">
+    <link rel="preload" as="image" href="posters/nike-joyride poster.avif">
+    <link rel="preload" as="image" href="posters/jordan blur.jpg">
+    <link rel="preload" as="image" href="posters/imgonline-com-ua-resize-xAS9D6StdY62ie6.png">
+    <link rel="preload" as="image" href="posters/nike-joyride.avif">
+    <link rel="preload" as="image" href="posters/jordan-blur-portrait.jpg">
+    <link rel="preload" as="image" href="posters/imgonline-com-ua-resize-4x3lAq77QcPhqq.png">
+    <link rel="preload" as="image" href="posters/Nikes-Mens-Shoes.jpg">
+    <link rel="preload" as="image" href="posters/imgonline-com-ua-resize-EZKKUN99dCa.png">
+    <link rel="preload" as="image" href="posters/imgonline-com-ua-resize-tWq551HM4Rir1.png">
+    <link rel="preload" as="image" href="posters/imgonline-com-ua-resize-rfNhNCBaRdQ.png">
+    <link rel="preload" as="image" href="posters/imgonline-com-ua-resize-8s0yQ6kKbEyqQ.png">
+    <link rel="preload" as="image" href="logo.png">
+    <link rel="preload" as="image" href="posters/we_fly.jpg">
+    <link rel="preload" as="image" href="posters/orange poster.jpg">
+    <link rel="preload" as="image" href="posters/football_amn.avif">
+    <link rel="preload" as="image" href="posters/basket.jpg">
+    <link rel="preload" as="image" href="posters/american-football.avif">
+   <!-- Preload critical fonts and icons -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" as="style">
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://kit.fontawesome.com">
+</head>
+<body>
+    <div id="overlay"></div>
+    <div id="dropdown">
+        <button id="close-button" class="material-symbols-outlined">close</button>
+        <br><br>
+        <a class="drop-elements" href="men.html">Men</a>
+        <a class="drop-elements" href="women.html">Women</a>
+        <a class="drop-elements" href="kids.html">Kids</a>
+        <a class="drop-elements" href="jordan.html">Jordan</a>
+        <a class="drop-elements" href="sports.html">Sport</a>
+        <br><br><br>
+        <p style="font-size: larger; padding: 0px 30px; color: dimgray;">Become a Nike Member for the best products.</p>
+        <br>
+        <a class="link-btns" href="login.html">Join Us</a>
+        <a id="btn2" class="link-btns" href="login.html">Sign In</a>
+    </div>
+     <header>
+        <a href="index.html"><img src="NIKE.png" id="logo"></a>
+        
+        <div id="catagories-box">
+            <a class="catagories" href="men.html">Men</a>
+            <a class="catagories" href="women.html">Women</a>
+            <a class="catagories" href="kids.html">Kids</a>
+            <a class="catagories" href="jordan.html">Jordan</a>
+            <a class="catagories" href="sports.html">Sport</a>
+        </div>
+        
+        <div class="header-icons">
+            <a href="favorites.html">
+                <span class="material-symbols-outlined heart-icon">favorite</span>
+            </a>
+            <a href="login.html"><i id="user-icon" class="material-symbols-outlined">person</i></a>
+            <a href="bag.html">
+                <i id="bag" class="material-symbols-outlined">shopping_bag<span id="bag-count">0</span></i>
+            </a>
+            <button id="menu-button" class="material-symbols-outlined mobile-only">menu</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="top-poster-layout">
+              <!-- Add these navigation buttons -->
+            <button class="nav-btn prev-btn">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button class="nav-btn next-btn">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+
+            <input type="checkbox" id="pp">
+            <div class="top-poster">
+                <div class="poster-slide" id="slide-0">
+                    <div class="top-img"></div>
+                    <div class="top-poster-text">RUN BEYOND LIMITS.</div>
+                    <p class="light-text">Elevate your run with power, precision, and style.</p>
+                    <a href="product.html?id=air_zoom" class="top-shop">Shop</a>
+                </div>
+                <div class="poster-slide" id="slide-1">
+                    <div class="top-img"></div>
+                    <div class="top-poster-text">OWN THE PITCH.</div>
+                    <p class="light-text">Unleash unstoppable speed that shatters every obstacle.</p>
+                    <a href="mercurial.html" class="top-shop">Shop</a>
+                </div>
+                <div class="poster-slide" id="slide-2">
+                    <div class="top-img"></div>
+                    <div class="top-poster-text">CHASE THE HORIZON.</div>
+                    <p class="light-text">Where energy meets comfort with every step.</p>
+                    <a href="product.html?id=nike_joyride" class="top-shop">Shop</a>
+                </div>
+                <div class="poster-slide" id="slide-3">
+                    <div class="top-img"></div>
+                    <div class="top-poster-text">UNC STREET ROYALTY.</div>
+                    <p class="light-text">Redefining street style with bold energy and timeless attitude.</p>
+                    <a href="product.html?id=aj1_retro" class="top-shop">Shop</a>
+                </div>
+                <div class="poster-slide" id="slide-4">
+                    <div class="top-img"></div>
+                    <div class="top-poster-text">RUN BEYOND LIMITS.</div>
+                    <p class="light-text">Elevate your run with power, precision, and style.</p>
+                    <a href="product.html?id=air_zoom" class="top-shop">Shop</a>
+                </div>
+                <div class="poster-slide" id="slide-5">
+                    <div class="top-img"></div>
+                    <div class="top-poster-text">OWN THE PITCH.</div>
+                    <p class="light-text">Unleash unstoppable speed that shatters every obstacle.</p>
+                    <a href="mercurial.html" class="top-shop">Shop</a>
+                </div>
+            </div>
+            <div class="dot-box">
+                <div class="dot fa-solid fa-circle"></div>
+                <div class="dot fa-solid fa-circle"></div>
+                <div class="dot fa-solid fa-circle"></div>
+                <div class="dot fa-solid fa-circle"></div>
+            </div>
+            <div class="pp-box">
+                <label for="pp" id="pause" >
+                   <span class="material-symbols-outlined">pause</span>
+                </label>
+                <label for="pp" id="play" >
+                    <span class="material-symbols-outlined">play_arrow</span>
+                </label>
+                <svg class="loading" width="60" height="60">
+                    <circle cx="30" cy="30" r="18"></circle>
+                    <circle cx="30" cy="30" r="18"></circle>
+                </svg>
+            </div>
+        </div>
+        <div class="layout">  
+            <div id="text">Popular Today</div>
+            <div class="container">           
+                <img src="posters/we_fly.jpg" id="img1" class="imgs">
+                <div class="container-text">Stay Classic.<br>Soar Higher.</div>
+                <a href="product.html?id=aj1_retro_high" class="shop">Shop</a>
+            </div>
+
+            <div class="container">
+                <img src="posters/orange poster.jpg" id="img2" class="imgs"> 
+                <div class="container-text">Strike First.<br>Finish Strong.</div> 
+                <a href="product.html?id=hypervenom" class="shop">Shop</a>
+            </div>
+
+            <div id="text">Explore More</div>
+            <div class="sportslayout">
+                <a href="sports.html?category=soccer" id="sportsbar">
+                    <img id="s1" class="sportspics" src="posters/football_amn.avif">
+                    <div class="sports-shop">Shop Soccer</div>
+                </a>
+
+                <a href="sports.html?category=basketball" id="sportsbar">  
+                    <img id="s2" class="sportspics" src="posters/basket.jpg">
+                    <div class="sports-shop">Shop Basketball</div>
+                </a>    
+
+                <a href="sports.html?category=football" id="sportsbar">
+                    <img id="s3" class="sportspics" src="posters/american-football.avif">
+                    <div class="sports-shop">Shop Football</div>
+                </a>
+            </div>
+        </div>      
+    </main>
+    <footer>
+        <br><br><br>      
+        <img id="footer-logo" src="logo.png">
+        <div id="text-below-logo">
+            <a class="login-links" href="login.html">Join Us</a>
+            <a class="login-links" href="login.html">Sign In</a>
+        </div>
+        <br><br>
+        <hr>
+        <br>
+        <div id="footer-text">
+            <p>© 2025 Nike, Inc. All Rights Reserved</p>
+            <p>Terms of Sale</p> 
+            <p>Terms of Use</p> 
+            <p>Nike Privacy Policy</p> 
+            <p>Your Privacy Choices</p> 
+            <p>CA Supply Chains Act</p>
+        </div>
+    </footer>
+    <script src="shoes-data.js"></script>
+    <script src="header.js"></script>
+    <script src="store.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2875ca2ccc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <img src="NIKE.png" id="logo">
+            <div id="form-container">       
+                <h2>Enter your email & password to join us.</h2><br><br>
+                <form id="login" action="index.html" method="get">
+                    <div class="input-wrapper">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Email*</label>
+                        <div class="error-message" id="email-error">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="input-wrapper">
+                        <input type="password" id="password" required placeholder=" ">
+                        <label for="password">Password*</label>
+                        <div class="error-message" id="email-error">Please enter a valid password</div>
+                    </div>
+                </form>           
+            </div>
+            <br>
+            <p id="policy">By continuing, I agree to Nike's <u>Privacy Policy</u> and <u>Terms of Use</u>.</p><br>
+            <button type="submit" form="login">Continue</button>
+        </div>
+    </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Elements
+    const elements = {
+        form: document.getElementById("login"),
+        emailInput: document.getElementById("email"),
+        passwordInput: document.getElementById("password"),
+        submitBtn: document.querySelector("button[type='submit']")
+    };
+
+    // State
+    const state = {
+        touched: new Set()
+    };
+
+    // Initialize
+    init();
+
+    function init() {
+        attachEventListeners();
+        updateSubmitState();
+    }
+
+    function getErrorDivFor(input) {
+        const wrapper = input.closest(".input-wrapper") || input.parentElement;
+        if (!wrapper) return null;
+        
+        let errorDiv = wrapper.querySelector(".error-message");
+        if (!errorDiv) {
+            errorDiv = document.createElement("div");
+            errorDiv.className = "error-message";
+            wrapper.appendChild(errorDiv);
+        }
+        return errorDiv;
+    }
+
+    function showError(input, message) {
+        const errorDiv = getErrorDivFor(input);
+        input.classList.add("error");
+        if (errorDiv) {
+            errorDiv.textContent = message;
+            errorDiv.style.display = "block";
+        }
+    }
+
+    function clearError(input) {
+        const errorDiv = getErrorDivFor(input);
+        input.classList.remove("error");
+        if (errorDiv) {
+            errorDiv.textContent = "";
+            errorDiv.style.display = "none";
+        }
+    }
+
+    function validateInput(input, showMsg = true) {
+        if (!input) return true;
+        
+        const val = input.value.trim();
+        let isValid = true;
+        let message = "";
+
+        if (input.validity.valueMissing) {
+            isValid = false;
+            const messages = {
+                email: "Please enter your email address",
+                password: "Please enter your password"
+            };
+            message = messages[input.id] || "This field is required";
+        } 
+        else if (input.type === "email" && input.validity.typeMismatch) {
+            isValid = false;
+            message = "Please enter a valid email address";
+        }
+        else if (input.id === "password" && val.length < 6) {
+            isValid = false;
+            message = "Password must be at least 6 characters";
+        }
+
+        if (showMsg) {
+            if (!isValid) showError(input, message);
+            else clearError(input);
+        }
+
+        return isValid;
+    }
+
+    function updateSubmitState() {
+        let isValid = true;
+
+        if (elements.form) {
+            const inputs = Array.from(elements.form.querySelectorAll("input[required]"));
+            inputs.forEach(input => {
+                if (!validateInput(input, state.touched.has(input))) isValid = false;
+            });
+        }
+
+        if (elements.submitBtn) elements.submitBtn.disabled = !isValid;
+    }
+
+    function handleInputBlur(e) {
+        state.touched.add(e.target);
+        validateInput(e.target, true);
+        updateSubmitState();
+    }
+
+    function handleInputInput(e) {
+        if (state.touched.has(e.target)) validateInput(e.target, true);
+        updateSubmitState();
+    }
+
+    function attachEventListeners() {
+        // Form inputs
+        if (elements.form) {
+            const requiredInputs = elements.form.querySelectorAll("input[required]");
+            requiredInputs.forEach(input => {
+                input.addEventListener("blur", handleInputBlur);
+                input.addEventListener("input", handleInputInput);
+            });
+        }
+
+        // Submit button
+        if (elements.submitBtn) {
+            elements.submitBtn.addEventListener("click", (e) => {
+                e.preventDefault(); // Always prevent default first
+                
+                // Validate all fields
+                let allValid = true;
+                
+                const inputs = Array.from(elements.form.querySelectorAll("input[required]"));
+                inputs.forEach(input => {
+                    state.touched.add(input);
+                    if (!validateInput(input, true)) allValid = false;
+                });
+                
+                if (allValid) {
+                    // Submit the form if all valid
+                    elements.form.submit();
+                }
+            });
+        }
+    }
+});
+        
+    </script>
+</body>
+</html>

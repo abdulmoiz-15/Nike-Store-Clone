@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bag</title>
+    <link rel="stylesheet" href="bag.css">
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://kit.fontawesome.com/2875ca2ccc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="overlay"></div>
+    <div id="dropdown">
+        <button id="close-button" class="material-symbols-outlined">close</button>
+        <br><br>
+        <a class="drop-elements" href="men.html">Men</a>
+        <a class="drop-elements" href="women.html">Women</a>
+        <a class="drop-elements" href="kids.html">Kids</a>
+        <a class="drop-elements" href="jordan.html">Jordan</a>
+        <a class="drop-elements" href="sports.html">Sport</a>
+        <br><br><br>
+        <p style="font-size: larger; padding: 0px 30px; color: dimgray;">Become a Nike Member for the best products.</p>
+        <br>
+        <a class="link-btns" href="login.html">Join Us</a>
+        <a id="btn2" class="link-btns" href="login.html">Sign In</a>
+    </div>
+     <header>
+        <a href="index.html"><img src="NIKE.png" id="logo" width="45"></a>
+        
+        <div id="catagories-box">
+            <a class="catagories" href="men.html">Men</a>
+            <a class="catagories" href="women.html">Women</a>
+            <a class="catagories" href="kids.html">Kids</a>
+            <a class="catagories" href="jordan.html">Jordan</a>
+            <a class="catagories" href="sports.html">Sport</a>
+        </div>
+        
+        <div class="header-icons">
+            <a href="favorites.html">
+                <span class="material-symbols-outlined heart-icon">favorite</span>
+            </a>
+            <a href="login.html"><i id="user-icon" class="material-symbols-outlined">person</i></a>
+            <a href="bag.html">
+                <i id="bag" class="material-symbols-outlined">shopping_bag<span id="bag-count">0</span></i>
+            </a>
+            <button id="menu-button" class="material-symbols-outlined mobile-only">menu</button>
+        </div>
+    </header>
+<main>
+  <div class="container">
+    <!-- LEFT SIDE: CART ITEMS ONLY -->
+    <div class="cart-items-left">
+      <h2>Bag</h2>
+      <div id="cart-items"></div>
+    </div>
+
+    <!-- RIGHT SIDE: SUMMARY -->
+    <div class="cart-summary">
+    <div class="up">
+        <div class="cart-header">
+        <h2>Summary</h2>
+        </div>
+        <p class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal"></span>
+        </p>
+        <p class="summary-row">
+            <span>Estimated Shipping and Handling</span>
+            <span id="shipping"></span>
+        </p>
+        <div class="total-box">
+        <p class="summary-row total">
+            <span>Total</span>
+            <span id="total"></span>
+        </p>
+        </div>
+        <p>You qualify for <b>Free Shipping</b> as a Member! 
+            <b><a href="login.html" style="color: rgb(131, 131, 131); text-underline-offset: 4px;">Join us</a></b> or 
+            <b><a href="login.html" style="color: rgb(131, 131, 131); text-underline-offset: 4px;">Sign-in</a></b>
+        </p>
+        <br>
+         <a class="checkout-link" href="checkout.html"><button id="checkout-button">Checkout</button></a>
+         <p style="color: rgb(80, 80, 80); font-size: 14px; padding-top: 10px; font-weight: 300;">By selecting one of the above payment options, you confirm that you have read, understand, and agree to Nike’s Terms of Use, Terms of Sale and Return Policy, and acknowledge Nike’s Privacy Policy.</p>
+    </div>
+  </div>
+</div>
+</main>
+ <footer>
+    <div id="text">You Might Also Like</div>
+        <div class="photos-container"></div>
+        <br><br><br>
+        <hr>
+        <br>
+    <div id="footer-text">
+            <p>© 2025 Nike, Inc. All Rights Reserved</p>
+            <p>Terms of Sale</p> 
+            <p>Terms of Use</p> 
+            <p>Nike Privacy Policy</p> 
+            <p>Your Privacy Choices</p> 
+            <p>CA Supply Chains Act</p>
+        </div>
+  </footer>
+  <script src="header.js"></script>
+  <script src="shoes-data.js"></script>
+  <script src="bag.js"></script>
+</body>
+</html>

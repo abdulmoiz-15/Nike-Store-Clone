@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport's Shoe</title>
+    <link rel="stylesheet" href="shoe.css">
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <script src="https://kit.fontawesome.com/2875ca2ccc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="overlay"></div>  
+    <div id="dropdown">
+        <button id="close-button" class="material-symbols-outlined">close</button>
+        <br><br>
+        <a class="drop-elements" href="men.html">Men</a>
+        <a class="drop-elements" href="women.html">Women</a>
+        <a class="drop-elements" href="kids.html">Kids</a>
+        <a class="drop-elements" href="jordan.html">Jordan</a>
+        <a class="drop-elements" href="sports.html">Sport</a>
+        <br><br><br>
+        <p style="font-size: larger; padding: 0px 30px; color: dimgray;">Become a Nike Member for the best products.</p>
+        <br>
+        <a class="link-btns" href="login.html">Join Us</a>
+        <a id="btn2" class="link-btns" href="login.html">Sign In</a>
+    </div>
+    <header>
+
+        <a href="index.html"><img src="NIKE.png" id="logo" width="45"></a>
+        
+        <div id="catagories-box">
+            <a class="catagories" href="men.html">Men</a>
+            <a class="catagories" href="women.html">Women</a>
+            <a class="catagories" href="kids.html">Kids</a>
+            <a class="catagories" href="jordan.html">Jordan</a>
+            <a class="catagories" href="sports.html">Sport</a>
+        </div>
+        
+        <div class="header-icons">
+            <a href="favorites.html">
+                <span class="material-symbols-outlined heart-icon">favorite</span>
+            </a>
+            <a href="login.html"><i id="user-icon" class="material-symbols-outlined">person</i></a>
+            <a href="bag.html">
+                <i id="bag" class="material-symbols-outlined">shopping_bag<span id="bag-count">0</span></i>
+            </a>
+            <button id="menu-button" class="material-symbols-outlined mobile-only">menu</button>
+        </div>
+    </header>
+    <main>
+        <div class="top"></div>
+        <div class="container">
+            <div class="left">
+                <img src="" class="shoe">
+            </div>
+            <div class="right">
+                <div class="description">
+                    <ul>
+                        <li class="information"></li>
+                        <li class="information"></li>
+                        <li class="information"></li>
+                    </ul>
+                </div>   
+                <div class="options-box">
+                    <div class="add-btn-container">
+                        <p id="size" style="font-size: large; font-weight: 550;">Select Size</p>
+                        <div class="sizes-box">
+                            <!-- Size options will be dynamically generated -->
+                        </div>
+                        <p id="size-error" class="error-message"></p>
+                        <br><br><br>
+                        <button class="buttons" id="add-button-text">Add to Bag</button>
+                    </div>
+                    <div class="buttons-box">
+                        
+                        <div id="back" style="display: none;">
+                            <div class="checkout" style="display: none;">
+                                <p id="bag-text"><span id="tick" class="fa-solid fa-circle-check"></span>Added to Bag <button id="x-button" class="material-symbols-outlined">close</button></p>
+                                <img id="checkout-img" src="" alt="Shoe">
+                                <p class="checkout-info" id="checkout-name"></p>
+                                <p class="checkout-info" id="checkout-type"></p>
+                                <p class="checkout-info" id="checkout-size"></p>
+                                <p class="checkout-info" id="checkout-price"></p><br>
+                                <button id="bag-button">View Bag ()</button>
+                                <button id="checkout-button">Checkout</button>
+                            </div>
+                        </div>
+                       <label id="fav-button" class="buttons">
+                        <input type="checkbox" id="heart">
+                        <span id="fav-button-text">Favorite</span>
+                        <span id="heart-outline" class="material-symbols-outlined">favorite</span>
+                        </label>
+                    </div>
+                    <br>
+                    <div class="text-after-buttons">
+                        <p id="shipping-txt" style="font-size: large;"><b style="font-weight: 550; line-height: 1.7;">Shipping</b><br>You'll see our shipping options at checkout.</p>    
+                        <br>
+                        <details style="font-size: large;">
+                            <summary class="shipping">Shipping & Returns
+                                <span id="arrow-down" class="material-symbols-outlined">stat_minus_1</span>
+                            </summary><br>
+                            Free standard shipping on orders $50+ and free 60-day returns for Nike Members. <u>Learn more. Return policy exclusions apply.</u>
+                        </details>    
+                        <hr class="line" style="width: 350px; background-color: lightgrey; border: none; height: 1px; margin-top: 10px;">         
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </main>
+
+    <footer>
+        <div id="text">You Might Also Like</div>
+        <div class="photos-container"></div>
+        <br><br><br>
+        <hr>
+        <br>
+        <div id="footer-text">
+            <p>© 2025 Nike, Inc. All Rights Reserved</p>
+            <p>Terms of Sale</p> 
+            <p>Terms of Use</p> 
+            <p>Nike Privacy Policy</p> 
+            <p>Your Privacy Choices</p> 
+            <p>CA Supply Chains Act</p>
+        </div>
+    </footer>
+    <script src="header.js"></script>
+    <script src="shoes-data.js"></script>
+    <script src="product.js"></script>
+</body>
+</html>
